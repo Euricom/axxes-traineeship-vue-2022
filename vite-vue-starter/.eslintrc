@@ -1,0 +1,8 @@
+{
+  "extends": "@antfu",
+  "rules": {
+    // override the rules from @antfu
+    "@typescript-eslint/quotes": ["error", "single"],
+    "@typescript-eslint/semi": ["error", "always"]
+  }
+}
