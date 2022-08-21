@@ -1,0 +1,37 @@
+{
+  "name": "vue-user-list",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "serve": "vite --open",
+    "build": "yarn build:prod",
+    "build:prod": "vue-tsc --noEmit && vite build",
+    "format": "prettier --write './src/**/*'",
+    "clean": "rimraf dist coverage",
+    "lint": "concurrently -n tsc,lint, -c \"cyan.bold,green.bold\" \"vue-tsc --noEmit --pretty\" \"eslint --ext .js,.jsx,.ts,.tsx,.vue ./src\""
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.2",
+    "bootstrap-icons": "^1.5.0",
+    "sort-on": "^4.1.1",
+    "vue": "^3.0.5"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "@vitejs/plugin-vue": "^1.2.2",
+    "@vitejs/plugin-vue-jsx": "^1.1.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "concurrently": "^6.1.0",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb-base-typescript-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-vue": "^7.9.0",
+    "prettier": "^2.3.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.1.3",
+    "vite": "^2.3.3",
+    "vue-tsc": "^0.1.4"
+  }
+}
