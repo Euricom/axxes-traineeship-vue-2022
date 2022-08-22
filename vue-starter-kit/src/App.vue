@@ -1,19 +1,9 @@
-<script setup>
-import { reactive, ref, watch } from 'vue';
-
-const myClass = 'box';
+<script setup lang="ts">
+const message = 'Hello Vue World';
 </script>
 
 <template>
-  <div class="container m-3" :class="myClass">
-    <button class="btn btn-primary">
-      Click
-    </button>
+  <div class="container">
+    <h1>{{ message }}</h1>
   </div>
 </template>
-
-<style>
-.box {
-  background-color: aquamarine;
-}
-</style>

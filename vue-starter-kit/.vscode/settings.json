@@ -1,12 +1,21 @@
 {
-  "cSpell.words": ["Vitesse", "Vite", "unocss", "vitest", "vueuse", "pinia", "demi", "antfu", "vitejs", "pnpm"],
-  "prettier.enable": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
+  "cSpell.words": [
+    "antfu",
+    "demi",
+    "dismissable",
+    "pinia",
+    "pnpm",
+    "tailwindcss",
+    "unocss",
+    "Vite",
+    "vitejs",
+    "Vitesse",
+    "vitest",
+    "vueuse"
+  ],
   "files.associations": {
     "*.css": "postcss"
   },
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "svg.preview.background": "transparent"
 }
