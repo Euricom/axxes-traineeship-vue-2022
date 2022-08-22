@@ -11,6 +11,7 @@ class: 'dark'
 
 <div class="absolute bottom-10">
   <small>
+  <a href="https://tinyurl.com/4udeakzm">https://tinyurl.com/4udeakzm</a><br/>
   by Peter Cosemans<br />
   Copyright (c) 2017-2022 Euricom nv.
   </small>
@@ -174,7 +175,7 @@ npm run dev
 
 VSCode 'Vue Language Features (Volar)' extension
 
-<img src="vue-language-features.png" class="h-60" />
+<img src="/vue-language-features.png" class="h-60" />
 
 - Color syntax highlighting
 - Typescript support
@@ -184,7 +185,7 @@ VSCode 'Vue Language Features (Volar)' extension
 
 # Debug tools 2/2
 
-<img src="devtools.png" class="h-80" />
+<img src="/devtools.png" class="h-80" />
 
 [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg)
 
@@ -312,7 +313,7 @@ const greeting = 'Hello World';
 
 # A composition of components
 
-<img src="vue-components.excalidraw.png" class="h-100" />
+<img src="/vue-components.excalidraw.png" class="h-100" />
 
 ---
 
