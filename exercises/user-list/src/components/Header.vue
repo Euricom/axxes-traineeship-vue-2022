@@ -4,33 +4,26 @@
   </th>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed } from 'vue';
-
-export default defineComponent({
-  props: {
-    field: { type: String, default: '' },
-    sortBy: { type: String, default: '' },
-  },
-  emits: ['click'],
-  setup(props, { emit }) {
-    const sortIconClass = computed(() => {
-      return props.sortBy.endsWith('-') ? 'bi bi-caret-down' : 'bi bi-caret-up';
-    });
-    const handleClick = () => {
-      let sortAsc = !props.sortBy.endsWith('-');
-      if (props.sortBy.includes(props.field)) {
-        sortAsc = !sortAsc;
-      }
-      emit('click', `${props.field}${sortAsc ? '' : '-'}`);
-    };
-    return {
-      handleClick,
-      sortIconClass,
-      props,
-    };
-  },
+<script setup lang="ts">
+import { computed } from 'vue';
+const props = defineProps({
+  field: { type: String, default: '' },
+  sortBy: { type: String, default: '' },
 });
+
+const emit = defineEmits(['click']);
+
+const sortIconClass = computed(() => {
+  return props.sortBy.startsWith('-') ? 'bi bi-caret-down' : 'bi bi-caret-up';
+});
+const handleClick = () => {
+  let sortAsc = !props.sortBy.startsWith('-');
+  if (props.sortBy.includes(props.field)) {
+    sortAsc = !sortAsc;
+  }
+  const field = `${sortAsc ? '' : '-'}${props.field}`;
+  emit('click', field);
+};
 </script>
 
 <style>

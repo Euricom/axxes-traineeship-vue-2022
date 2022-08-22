@@ -17,19 +17,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import useQueryUsers from './common/hooks/useQueryUsers';
-
-export default defineComponent({
-  components: {},
-  setup() {
-    const { users } = useQueryUsers();
-    return {
-      users,
-    };
-  },
-});
+<script setup lang="ts">
+import useQueryUsers from '../common/hooks/useQueryUsers';
+const { users } = useQueryUsers();
 </script>
 
 <style scoped>

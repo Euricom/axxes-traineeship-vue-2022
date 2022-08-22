@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { ref, onMounted, onUnmounted, Ref } from 'vue';
 
 interface InfiniteScrollOptions {

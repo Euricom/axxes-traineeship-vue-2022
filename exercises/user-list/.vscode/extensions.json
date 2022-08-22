@@ -1,16 +1,10 @@
 {
-  // See http://go.microsoft.com/fwlink/?LinkId=827846
-  // for the documentation about the extensions.json format
   "recommendations": [
-    // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
-    "EditorConfig.editorconfig",
+    "antfu.vite",
+    "csstools.postcss",
     "dbaeumer.vscode-eslint",
-    "christian-kohler.path-intellisense",
-    "johnsoncodehk.volar",
-    "esbenp.prettier-vscode",
-    "formulahendry.auto-close-tag",
-    "formulahendry.auto-rename-tag",
-    "naumovs.color-highlight",
-    "wayou.vscode-todo-highlight"
+    "vue.volar",
+    "lokalise.i18n-ally",
+    "streetsidesoftware.code-spell-checker"
   ]
 }

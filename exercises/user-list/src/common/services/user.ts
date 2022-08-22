@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import api from './api';
 import { User } from '../models/user';
 

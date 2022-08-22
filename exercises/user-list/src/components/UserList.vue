@@ -22,47 +22,37 @@
         </tr>
       </tbody>
     </table>
-    <span v-show="loading">Loading...</span>
+    <!-- <span v-show="loading">Loading...</span> -->
   </div>
-  <!--
-    <button v-show="hasNextPage" class="btn btn-primary btn-sm" @click="loadMore">LoadMore</button>
-  -->
+
+  <button v-show="hasNextPage" class="btn btn-primary btn-sm" @click="handleLoadMore">LoadMore</button>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
-import Header from './components/Header.vue';
-import { useInfiniteScroll } from './common/hooks/useInfiniteScroll';
-import useQueryUsers from './common/hooks/useQueryUsers';
+<script setup lang="ts">
+import Header from './Header.vue';
+import { ref } from 'vue';
 
-export default defineComponent({
-  components: {
-    Header,
-  },
-  setup() {
-    const sortBy = ref('name');
-    const { users, loadMore, load, hasNextPage } = useQueryUsers();
+// import { useInfiniteScroll } from '../common/hooks/useInfiniteScroll';
+import useQueryUsers from '../common/hooks/useQueryUsers';
 
-    const { loading } = useInfiniteScroll({
-      enable: hasNextPage,
-      onLoadMore: () => {
-        return loadMore(sortBy.value);
-      },
-    });
+const sortBy = ref('name');
+const { users, loadMore, load, hasNextPage } = useQueryUsers();
 
-    const handleSort = (updatedSortBy: string) => {
-      sortBy.value = updatedSortBy;
-      load(sortBy.value);
-    };
+// const { loading } = useInfiniteScroll({
+//   enable: hasNextPage,
+//   onLoadMore: () => {
+//     return loadMore(sortBy.value);
+//   },
+// });
 
-    return {
-      sortBy,
-      users,
-      loading,
-      handleSort,
-    };
-  },
-});
+const handleLoadMore = () => {
+  return loadMore(sortBy.value);
+};
+
+const handleSort = (updatedSortBy: string) => {
+  sortBy.value = updatedSortBy;
+  load(sortBy.value);
+};
 </script>
 
 <style scoped>

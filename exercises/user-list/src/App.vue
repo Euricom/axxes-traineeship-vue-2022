@@ -1,3 +1,16 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import UserList from './components/UserList.vue';
+import UserGrid from './components/UserGrid.vue';
+
+type Mode = 'table' | 'grid';
+const mode = ref<Mode>('table');
+
+const handleMode = () => {
+  mode.value = mode.value === 'table' ? 'grid' : 'table';
+};
+</script>
+
 <template>
   <div class="container">
     <h1>My App</h1>
@@ -8,29 +21,3 @@
     <UserGrid v-else />
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue';
-import UserList from './UserList.vue';
-import UserGrid from './UserGrid.vue';
-
-type Mode = 'table' | 'grid';
-
-export default defineComponent({
-  name: 'App',
-  components: {
-    UserList,
-    UserGrid,
-  },
-  data() {
-    return {
-      mode: 'table' as Mode,
-    };
-  },
-  methods: {
-    handleMode() {
-      this.mode = this.mode === 'table' ? 'grid' : 'table';
-    },
-  },
-});
-</script>
