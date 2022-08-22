@@ -9,7 +9,6 @@ specifiers:
   '@vue/eslint-config-typescript': ^11.0.0
   '@vue/test-utils': ^2.0.2
   autoprefixer: ^10.4.8
-  bootstrap: ^5.2.0
   cross-env: ^7.0.3
   eslint: ^8.21.0
   eslint-plugin-vue: ^9.3.0
@@ -27,7 +26,6 @@ specifiers:
   vue-tsc: ^0.39.5
 
 dependencies:
-  bootstrap: 5.2.0
   pinia: 2.0.20_j6bzmzd4ujpabbp5objtwxyjp4
   vue: 3.2.37
   vue-i18n: 9.2.2_vue@3.2.37
@@ -663,12 +661,6 @@ packages:
   /boolbase/1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
     dev: true
-
-  /bootstrap/5.2.0:
-    resolution: {integrity: sha512-qlnS9GL6YZE6Wnef46GxGv1UpGGzAwO0aPL1yOjzDIJpeApeMvqV24iL+pjr2kU4dduoBA9fINKWKgMToobx9A==}
-    peerDependencies:
-      '@popperjs/core': ^2.11.5
-    dev: false
 
   /brace-expansion/1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
