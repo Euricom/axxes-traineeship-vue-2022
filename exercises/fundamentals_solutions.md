@@ -133,7 +133,7 @@ const markAsDone = (todo) => {
 <!-- App.vue -->
 <script setup>
 import { ref } from 'vue';
-import MyAlert from './components/MyAlert.vue';
+import Alert from './components/MyAlert.vue';
 
 const alertMessage = ref('Alert: We have a problem.');
 const handledAlertClosed = () => {
@@ -147,15 +147,15 @@ const handleShowAlert = () => {
 
 <template>
   <div class="container m-2">
-    <my-alert dismissable :show="!!alertMessage" @dismissed="handledAlertClosed">
+    <Alert dismissable :show="!!alertMessage" @dismissed="handledAlertClosed">
       {{ alertMessage }}
-    </my-alert>
-    <my-alert variant="info">
+    </Alert>
+    <Alert variant="info">
       Don't forget to register
-    </my-alert>
-    <my-alert variant="success">
+    </Alert>
+    <Alert variant="success">
       Update was successful
-    </my-alert>
+    </Alert>
     <button class="btn btn-primary" @click="handleShowAlert">
       Show Alert Again
     </button>
@@ -163,8 +163,8 @@ const handleShowAlert = () => {
 </template>
 ```
 
-```html
-<!-- MyAlert.vue -->
+```vue
+<!-- Alert.vue -->
 <script setup>
 const props = defineProps({
   variant: {
@@ -207,6 +207,7 @@ const handleClose = () => {
 Typescript version
 
 ```vue
+<!-- Alert.vue -->
 <script setup lang="ts">
 interface AlertProps {
   variant?: string

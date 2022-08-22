@@ -28,12 +28,12 @@ Create dismissible bootstrap alert component
 
 <!-- prettier-ignore -->
 
-```html
+```vue
 <!-- default alert: warning -->
-<my-alert> Almost out of stock </my-alert>
+<Alert> Almost out of stock </Alert>
 
 <!-- custom alert with event -->
-<my-alert type="alert" @closed="handleClosed"> <strong>Alert!</strong> We have a problem. </my-alert>
+<Alert type="alert" @closed="handleClosed"> <strong>Alert!</strong> We have a problem. </Alert>
 ```
 
 - Don't use jquery or the bootstrap js library
