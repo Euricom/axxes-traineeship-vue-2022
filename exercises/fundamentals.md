@@ -23,17 +23,17 @@ Create a small TODO list
 Create dismissible bootstrap alert component
 
 - Use bootstrap styling:<br/>
-  http://getbootstrap.com/components/#alerts-dismissible
+  https://getbootstrap.com/docs/5.2/components/alerts/
 - Create VueJS component
 
 <!-- prettier-ignore -->
 
 ```html
 <!-- default alert: warning -->
-<Alert> Almost out of stock </Alert>
+<my-alert> Almost out of stock </my-alert>
 
 <!-- custom alert with event -->
-<Alert type="alert" @closed="handleClosed"> <strong>Alert!</strong> We have a problem. </Alert>
+<my-alert type="alert" @closed="handleClosed"> <strong>Alert!</strong> We have a problem. </my-alert>
 ```
 
 - Don't use jquery or the bootstrap js library
@@ -48,6 +48,6 @@ Create dismissible bootstrap alert component
 - Use bootstrap for styling
 - Show image, title, sku and price in table format.
 - Optional
-  - Make an alternative view to show products in panels (and switch between the views)
+  - Make an alternative view to show products in grid and switch between the views
+  - In the product table make the headers clickable to sort rows
   - Provide load more, paging or infinite scrolling
-  - Make the headers clickable to sort rows
