@@ -7,7 +7,7 @@ class: 'dark'
 
 ## VueJS Fundamentals
 
-<img src="/vue-logo.png" class="h-70" /><br>
+<img src="/vue-logo.png" class="h-90" /><br>
 
 <div class="absolute bottom-10">
   <small>
@@ -21,31 +21,40 @@ layout: section-dark
 background: /calm7.jpeg
 ---
 
-# The Progressive JavaScript Framework
+<img src="/the-progressive-javascript-framework.png" class="h-100" />
 
-An approachable, performant and versatile framework for building web user interfaces.
-
+---
+layout: quote
 ---
 
 # Why Vue.js
 
-- Easy to learn 
-- Feels simple, yet powerful
-- Collection of the best
-- Blazing Fast Virtual DOM
-- It's small (20KB min+gzip)
+It is a lightweight progressive framework, which is **easy to learn**, **extremely flexible**, and **simple to use**. Having **179,253 stars** on Github, Vue is one of the most popular Javascript frameworks, surpassing even React and Angular having 163,431 and 70,544 stars each.
 
 ---
 
-# Compare to
+<a href="https://2021.stateofjs.com/en-US/libraries/front-end-frameworks/front_end_frameworks_experience_ranking" class="h-80">
+<img src="/framework-ranking.png" />
+</a>
 
-- A virtual DOM (React)
-- Prop and centralized state management
-  - Similar React
-- Conditional rendering and services,
-  - Similar to Angular
-- Inspired by Polymer
-- Offer similar development style as : html, CSS and JS
+---
+
+# Npm downloads
+
+<img src="/npm-stats.png" class="h-100" />
+
+---
+
+# Github Stars
+
+<img src="/github-stars.png" class="h-100" />
+
+---
+layout: section-dark
+background: /calm1.jpeg
+---
+
+# Getting started
 
 ---
 
@@ -58,17 +67,14 @@ Make sure you have the correct version
 - [Vue 2 documentation](https://v2.vuejs.org/guide)
 - [Vue 3 documentation](https://vuejs.org/guide)
 
-Training
+**Training**
 
-- [https://www.vuemastery.com/](https://www.vuemastery.com/)
+- [Vue Mastery](https://www.vuemastery.com/)
+- [Vue School](https://vueschool.io/courses)
 
+**Related** 
 
----
-layout: section-dark
-background: /calm1.jpeg
----
-
-# Getting started
+- [awesome-vue](https://github.com/vuejs/awesome-vue)
 
 ---
 
@@ -274,6 +280,31 @@ const greeting = 'Hello World';
   color: red;
   font-weight: bold;
 }
+</style>
+```
+
+---
+
+# You can specify the language of your choice
+
+```vue
+<script setup lang="ts">
+  const greeting:string = 'Hello World';
+</script>
+
+<template lang="pug">
+  div 
+    p Hello World
+</template>
+
+<style lang="scss">
+  $font-stack: Helvetica, sans-serif;
+  $primary-color: #030303;
+
+  .box {
+    font: 100% $font-stack;
+    color: $primary-color;
+  }
 </style>
 ```
 
@@ -870,6 +901,12 @@ import './main.css';
 
 createApp(App).mount('#app');
 ```
+<br />
+
+```bash
+# install dependency
+npm install bootstrap
+```
 
 ---
 
@@ -975,7 +1012,7 @@ background: /calm1.jpeg
 Are calculation based on the state. We also call this the derived state.
 Computed properties are cached and will only update when state changes.
 
-```vue
+```vue {all|6-10}
 <script setup>
 import { computed, ref } from 'vue';
 
@@ -1001,7 +1038,7 @@ const filteredUsers = computed(() => {
 
 Gets called when data changes.
 
-```js
+```js {all|8-10}
 import { ref, watch } from 'vue';
 
 const counter = ref(0);
@@ -1063,14 +1100,16 @@ layout: section-dark
 background: /calm1.jpeg
 ---
 
-# Vue syntax evolution
-## Lets make it better
+# Vue API Styles
+## Which one to use
 
 ---
 cols: 1-2
 ---
 
 ## Option API
+
+Vue2 
 
 ```vue
 <script>
@@ -1092,10 +1131,12 @@ export default {
 
 ## Composition API
 
+Vue3 (backported to Vue2.7) 
+
 ```vue
 <script>
 import { defineComponent, ref } from 'vue'
-export defineComponent {
+export default defineComponent({
   setup() {
     const name = ref('John Doe');
     const age = ref(30);
@@ -1109,7 +1150,7 @@ export defineComponent {
       handleClick
     }
   }
-}
+})
 </script>
 ```
 
@@ -1120,10 +1161,12 @@ cols: 1-2
 
 ## script
 
+Vue 3.0
+
 ```vue
 <script>
 import { defineComponent, ref } from 'vue'
-export defineComponent {
+export default defineComponent({
   setup() {
     const name = ref('John Doe');
     const age = ref(30);
@@ -1137,7 +1180,7 @@ export defineComponent {
       handleClick
     }
   }
-}
+})
 </script>
 
 ```
@@ -1145,6 +1188,8 @@ export defineComponent {
 ::right::
 
 ## script setup
+
+Vue 3.2+
 
 ```vue
 <script setup>
@@ -1173,7 +1218,7 @@ cols: 1-1
 
 Person.vue
 
-```vue
+```vue {all|2-5}
 <script setup>
   const props = defineProps({
     name: String,
@@ -1189,6 +1234,8 @@ Person.vue
   </div>
 </templates>
 ```
+
+Props are direct available in `<template>`
 
 ::right::
 
@@ -1214,22 +1261,22 @@ It's always good to add additional props validation
 
 ```vue
 <script setup>
-defineProps({
-  // Basic type check
-  propA: Number,
-  // Multiple possible types
-  propB: [String, Number],
-  // Required string
-  propC: {
-    type: String,
-    required: true,
-  },
-  // Number with a default value
-  propD: {
-    type: Number,
-    default: 100,
-  },
-});
+  defineProps({
+    // Basic type check
+    propA: Number,
+    // Multiple possible types
+    propB: [String, Number],
+    // Required string
+    propC: {
+      type: String,
+      required: true,
+    },
+    // Number with a default value
+    propD: {
+      type: Number,
+      default: 100,
+    },
+  });
 </script>
 ```
 
@@ -1240,11 +1287,17 @@ defineProps({
 ```ts
 <script setup lang="ts">
   interface PersonProps {
-    name: string;
-    age: number;
-    isActive: boolean;
+    propA?: number;
+    propB?: string | number;
+    propC: string;
+    propD?: number;
   }
   const props = defineProps<PersonProps>();
+
+  // with default value
+  // const props = withDefaults(defineProps<PersonProps>(), {
+  //   propD: 100,   
+  // }
 </script>
 ```
 
@@ -1254,7 +1307,7 @@ defineProps({
 
 You can emit an event from the child component to the parent.
 
-```vue
+```vue {all|2-3}
 <script setup>
 const emit = defineEmits(['inFocus', 'selected'])
 
@@ -1264,7 +1317,7 @@ function handleClick() {
 </script>
 ```
 
-Usage
+Usage (as any other attr binding)
 
 ```html
 <MyComponent @selected="handleSelect"></MyComponent>
@@ -1274,7 +1327,7 @@ Usage
 
 # Event - Typescript
 
-```vue
+```vue {all|2-6|9}
 <script setup lang="ts">
   const emit = defineEmits<{
     (e: 'change', id: number): void
@@ -1295,8 +1348,10 @@ Usage
 ```js
 import { onMounted, onUpdated, onUnmounted } from 'vue';
 
+// Element is created 
+
 onMounted(() => {
-  // Element is created (html in doc)
+  // Element is mounted in the html
 });
 
 onUpdated(() => {
@@ -1312,13 +1367,9 @@ More: https://vuejs.org/api/composition-api-lifecycle.html
 
 ---
 
-## Slots
+# Slots
 
 Using the `<slot>` to pass the inner content from the parent to the child
-
-```html
-<MyButton><strong>Add todo</strong></MyButton>
-```
 
 ```vue
 <!-- MyButton.vue -->
@@ -1327,6 +1378,12 @@ Using the `<slot>` to pass the inner content from the parent to the child
     <slot></slot>
   </button>
 </template>
+```
+
+```html
+<MyButton>
+  <strong>Add todo</strong>
+</MyButton>
 ```
 
 result
@@ -1338,21 +1395,147 @@ result
 </button>
 ```
 
+---
+
+# Named Slots
+
+```html
+<!-- MyComponent.vue -->
+<template>
+  <div class="container">
+    <header>
+      <slot name="header"></slot>
+    </header>
+    <main>
+      <slot>Default content</slot>
+    </main>
+  </div>
+</template>
+```
+
+Specify the name of the slot
+
+```vue
+<MyComponent>
+  <h1 v-slot:header>Page title</h1>
+  <p>the main content.</p>
+</MyComponent>
+```
+
+Shorthand syntax: '#header'
+
+---
+cols: 2-1
+---
+
+# Exercise
+
+Create dismissible bootstrap alert component
+
+- Use bootstrap styling:<br/>
+  http://getbootstrap.com/components/#alerts-dismissible
+- Create VueJS component
+
+<!-- prettier-ignore -->
+```html
+<!-- default alert: warning -->
+<Alert> Almost out of stock </Alert>
+
+<!-- custom alert with event -->
+<Alert type="alert" @closed="handleClosed" closable> 
+  <strong>Alert!</strong> We have a problem.
+</Alert>
+```
+
+- Don't use jquery or the bootstrap js library
+- Log a message to the console if the dialog is closed
+
+::right::
+
+<img src="/sustainable-yoga-mats-for-international-day-of-yoga-05.jpeg" />
+
+---
+layout: section-dark
+background: calm1.jpeg
+---
+
+# Data Access
+
+> Connect to the API
 
 ---
 
+# Using Axios
 
-# Resources
+```html
+<template>
+  <ul>
+    <li v-for="user of users">{{user.name}}</li>
+  </ul>
+</template>
+
+<script>
+  import axios from 'axios';
+  import { ref, onMounted } from 'vue';
+  
+  const users = ref([]);
+
+  onMounted(async () => {
+    const res = await axios.get('./users.json');
+    users.value = res.data;
+  }
+</script>
+```
+
+---
+
+# Using Fetch
+
+```html
+<template>
+  <ul>
+    <li v-for="user of users">{{user.name}}</li>
+  </ul>
+</template>
+
+<script>
+  import { ref, onMounted } from 'vue';
+
+  const users = ref([]);
+  
+  onMounted(() => {
+    fetch('./users.json')
+      .then((res) => res.json())
+      .then((users) => {
+        users.value = users;
+      });
+  });
+</script>
+```
+
+---
+layout: image-left
+image: /sprinting_running_cardio_main.webp
+---
+
+# Exercise
+
+> Build an app to show a list of users
+
+- Use 'https://euricom-test-api.herokuapp.com' to get a list of products
+- Use 'fetch' api or 'axios' to access data
+- Use bootstrap for styling
+- Show image, title, sku and price in table format.
+- Optional
+  - Provide load more, paging or infinite scrolling
+  - Make the headers clickable to sort rows
+
+---
 
 # What's next
 
-- [Vue-router](https://router.vuejs.org/)
-- Advanced forms ([vee-validate](https://vee-validate.logaretm.com/v4/) & [Yup](https://github.com/jquense/yup))
-- [Vue.js Component Style Guide](https://github.com/pablohpsilva/vuejs-component-style-guide#component-structure)
+- Routing: [Vue-router](https://router.vuejs.org/)
+- Form Validation: ([vee-validate](https://vee-validate.logaretm.com/v4/guide/composition-api/validation#displaying-errors-with-useform) & [Zod](https://zod.dev/))
+- State Management ([pinia](https://pinia.vuejs.org/))
+- Style: [Vue.js Component Style Guide](https://github.com/pablohpsilva/vuejs-component-style-guide#component-structure)
 
----
-layout: quote
-background: '/yoda-force.jpeg'
----
-
-# May the JavaScript force be with you
